@@ -97,6 +97,7 @@
 		<ac:for param="reportType" list="LatenciesOverTime,TimesVsThreads,ResponseTimesOverTime,ThreadsStateOverTime,TransactionsPerSecond,ResponseTimesPercentiles,ResponseTimesDistribution">
 			  <sequential>
 					<exec executable="sh">
+						  <arg value="/"/>
 						  <arg value="${jmeter.home}/bin/JMeterPluginsCMD"/>
 						  <arg value="--tool"/>
 						  <arg value="Reporter"/>
@@ -134,6 +135,7 @@
 	<!-- Installs all the required plugins -->
 	<target name="install-plugins" depends="download-plugin-manager">
 		  <exec executable="sh">
+			<arg value="/"/>
 			<arg value="${jmeter.home}/bin/PluginsManagerCMD"/>
 			<arg value="install"/>
 			<arg value="${plugins.list}"/>
